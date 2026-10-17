@@ -11,14 +11,14 @@ const uiContainer = document.getElementById('ui-root');
 const hudHint = document.getElementById('hud-hint');
 
 if (hudHint) {
-  hudHint.textContent = 'Drag across Mochi-Puff to pet & comb fur · Click creature to boop · Orbit with mouse';
+  hudHint.textContent = 'Drag across the Alien Mascot’s fur tuft to pet & style · Boop his nose or antenna · Orbit with mouse';
 }
 
 const urlSearchParams = new URLSearchParams(window.location.search);
 const forceWebGL = urlSearchParams.get('gpuFur') === '0' || urlSearchParams.get('mode') === 'webgl';
 const initialGpuFur = !forceWebGL;
 
-// Initial state from our Sakura Mochi preset + Studio environment (WebGPU Fur mode by default, WebGL fallback / toggleable)
+// Initial state from our Mascot Fur preset + Studio environment (WebGPU Fur mode by default, WebGL fallback / toggleable)
 const simState = {
   ...FUR_PRESETS[0],
   keyColor: '#fff7ed',
@@ -197,9 +197,9 @@ function applyEnvironmentPreset(envId) {
   updateLightingFromState();
   if (hudHint) {
     if (envId === 'ar') {
-      hudHint.textContent = 'AR Active: Tap screen to place Mochi on detected surface · Pet or boop him · Drag to orbit';
+      hudHint.textContent = 'AR Active: Tap screen to place the Alien Mascot on detected surface · Pet his fur or boop him · Drag to orbit';
     } else {
-      hudHint.textContent = 'Drag across Mochi-Puff to pet & comb fur · Click creature to boop · Orbit with mouse';
+      hudHint.textContent = 'Drag across the Alien Mascot’s fur tuft to pet & style · Boop his nose or antenna · Orbit with mouse';
     }
   }
 }
@@ -317,7 +317,7 @@ const ui = createMinimalUI(uiContainer, simState, (key, value) => {
       creature.resetPlacement();
       envManager.resetARAnchor();
       if (hudHint) {
-        hudHint.textContent = 'Mochi reset to center position · Tap screen to place on detected surface';
+        hudHint.textContent = 'Alien Mascot reset to center position · Tap screen to place on detected surface';
       }
       break;
     default:
@@ -382,7 +382,7 @@ window.addEventListener('pointermove', (e) => {
   pointerNDC.y = -(e.clientY / window.innerHeight) * 2.0 + 1.0;
 
   raycaster.setFromCamera(pointerNDC, camera);
-  const hits = raycaster.intersectObject(creature.bodyMesh, false);
+  const hits = raycaster.intersectObjects(creature.pickTargets || [creature.bodyMesh], false);
   if (hits.length > 0) {
     prevPointerLocalPos.copy(pointerLocalPos);
     pointerLocalPos.copy(hits[0].point);
@@ -434,7 +434,7 @@ window.addEventListener('pointerup', (e) => {
         creature.placeAt(planeHit.point, planeHit.normal, true, camera.position);
         envManager.triggerPlacementPulse(planeHit.point);
         if (hudHint) {
-          hudHint.textContent = `Placed Mochi on ${planeHit.surfaceType} · Estimated Depth: ${planeHit.depth.toFixed(2)}m (${Math.round(planeHit.confidence * 100)}% conf)`;
+          hudHint.textContent = `Placed Alien Mascot on ${planeHit.surfaceType} · Estimated Depth: ${planeHit.depth.toFixed(2)}m (${Math.round(planeHit.confidence * 100)}% conf)`;
         }
       }
     }

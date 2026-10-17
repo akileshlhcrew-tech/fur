@@ -24,48 +24,70 @@ export function sanitizeHexColor(val, fallback) {
 
 export const FUR_PRESETS = [
   {
-    name: 'Sakura Mochi',
-    baseColor: '#5e2bff',
-    tipColor: '#ff9ec7',
-    furLength: 0.31,
-    furDensity: 0.75,
-    roughness: 0.77,
-    specular: 0.24,
-    clumping: 0.35,
-    curliness: 0.23
-  },
-  {
-    name: 'Golden Fluff',
-    baseColor: '#7c3f14',
-    tipColor: '#fde68a',
+    name: 'Mascot Fur (Brown)',
+    baseColor: '#22140d',
+    tipColor: '#673f27',
     furLength: 0.38,
-    furDensity: 0.92,
-    roughness: 0.77,
-    specular: 0.24,
-    clumping: 0.64,
-    curliness: 0.58
+    furDensity: 0.90,
+    roughness: 0.72,
+    specular: 0.28,
+    clumping: 0.52,
+    curliness: 0.36
   },
   {
-    name: 'Midnight Velvet',
-    baseColor: '#131638',
-    tipColor: '#67e8f9',
-    furLength: 0.29,
-    furDensity: 0.95,
-    roughness: 0.77,
-    specular: 0.24,
-    clumping: 0.44,
-    curliness: 0.15
-  },
-  {
-    name: 'Matcha Puff',
-    baseColor: '#1e4631',
-    tipColor: '#bbf7d0',
+    name: 'Deep Espresso',
+    baseColor: '#140c07',
+    tipColor: '#452817',
     furLength: 0.36,
-    furDensity: 0.86,
-    roughness: 0.77,
-    specular: 0.24,
-    clumping: 0.62,
-    curliness: 0.72
+    furDensity: 0.92,
+    roughness: 0.70,
+    specular: 0.30,
+    clumping: 0.58,
+    curliness: 0.28
+  },
+  {
+    name: 'Caramel Mascot',
+    baseColor: '#2e190e',
+    tipColor: '#a66c38',
+    furLength: 0.40,
+    furDensity: 0.88,
+    roughness: 0.74,
+    specular: 0.26,
+    clumping: 0.48,
+    curliness: 0.42
+  },
+  {
+    name: 'Golden Tuft',
+    baseColor: '#3a2708',
+    tipColor: '#f59e0b',
+    furLength: 0.39,
+    furDensity: 0.88,
+    roughness: 0.75,
+    specular: 0.25,
+    clumping: 0.60,
+    curliness: 0.45
+  },
+  {
+    name: 'Cosmic Violet',
+    baseColor: '#18102b',
+    tipColor: '#8b5cf6',
+    furLength: 0.35,
+    furDensity: 0.90,
+    roughness: 0.73,
+    specular: 0.27,
+    clumping: 0.45,
+    curliness: 0.30
+  },
+  {
+    name: 'Alien Forest',
+    baseColor: '#0d2417',
+    tipColor: '#34d399',
+    furLength: 0.37,
+    furDensity: 0.88,
+    roughness: 0.75,
+    specular: 0.25,
+    clumping: 0.55,
+    curliness: 0.48
   }
 ];
 
